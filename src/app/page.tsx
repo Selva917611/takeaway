@@ -10,19 +10,19 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 // Define menu items with descriptions and dietary info
 const menu = {
   'South Indian': [
-    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=1' },
-    { name: 'Idli', price: 25, description: 'Steamed rice cakes', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=2' },
-    { name: 'Vada', price: 35, description: 'Savory fried lentil donuts', vegetarian: true, spicy: true, image: 'https://picsum.photos/200/150?random=3' },
+    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Masala_dosa.jpg/1280px-Masala_dosa.jpg' },
+    { name: 'Idli', price: 25, description: 'Steamed rice cakes', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Idli_Sambar.jpg/1280px-Idli_Sambar.jpg' },
+    { name: 'Vada', price: 35, description: 'Savory fried lentil donuts', vegetarian: true, spicy: true, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Vada_at_Mattancherry.JPG/1280px-Vada_at_Mattancherry.JPG' },
   ],
   'North Indian': [
-    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: 'https://picsum.photos/200/150?random=4' },
-    { name: 'Palak Paneer', price: 120, description: 'Spinach and cottage cheese curry', vegetarian: true, spicy: true, image: 'https://picsum.photos/200/150?random=5' },
-    { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=6' },
+    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Butter_Chicken_%28Murgh_Makhani%29.jpg/1280px-Butter_Chicken_%28Murgh_Makhani%29.jpg' },
+    { name: 'Palak Paneer', price: 120, description: 'Spinach and cottage cheese curry', vegetarian: true, spicy: true, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Palak_Paneer.jpg/1280px-Palak_Paneer.jpg' },
+    { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Dal_Makhani.jpg/1280px-Dal_Makhani.jpg' },
   ],
   'Desserts': [
-    { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=7' },
-    { name: 'Rasmalai', price: 50, description: 'Cheese patties in sweet milk', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=8' },
-    { name: 'Jalebi', price: 30, description: 'Crispy fried batter in syrup', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=9' },
+    { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Gulab_Jamun_with_syrup.JPG/1280px-Gulab_Jamun_with_syrup.JPG' },
+    { name: 'Rasmalai', price: 50, description: 'Cheese patties in sweet milk', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Rasmalai_Kolkata_India.jpg/1280px-Rasmalai_Kolkata_India.jpg' },
+    { name: 'Jalebi', price: 30, description: 'Crispy fried batter in syrup', vegetarian: true, spicy: false, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jalebi.JPG/1280px-Jalebi.JPG' },
   ],
 };
 
