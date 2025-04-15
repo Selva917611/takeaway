@@ -5,23 +5,24 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
 // Define menu items with descriptions and dietary info
 const menu = {
   'South Indian': [
-    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false },
-    { name: 'Idli', price: 25, description: 'Steamed rice cakes', vegetarian: true, spicy: false },
-    { name: 'Vada', price: 35, description: 'Savory fried lentil donuts', vegetarian: true, spicy: true },
+    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=1' },
+    { name: 'Idli', price: 25, description: 'Steamed rice cakes', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=2' },
+    { name: 'Vada', price: 35, description: 'Savory fried lentil donuts', vegetarian: true, spicy: true, image: 'https://picsum.photos/200/150?random=3' },
   ],
   'North Indian': [
-    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false },
-    { name: 'Palak Paneer', price: 120, description: 'Spinach and cottage cheese curry', vegetarian: true, spicy: true },
-    { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false },
+    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: 'https://picsum.photos/200/150?random=4' },
+    { name: 'Palak Paneer', price: 120, description: 'Spinach and cottage cheese curry', vegetarian: true, spicy: true, image: 'https://picsum.photos/200/150?random=5' },
+    { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=6' },
   ],
   'Desserts': [
-    { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false },
-    { name: 'Rasmalai', price: 50, description: 'Cheese patties in sweet milk', vegetarian: true, spicy: false },
-    { name: 'Jalebi', price: 30, description: 'Crispy fried batter in syrup', vegetarian: true, spicy: false },
+    { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=7' },
+    { name: 'Rasmalai', price: 50, description: 'Cheese patties in sweet milk', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=8' },
+    { name: 'Jalebi', price: 30, description: 'Crispy fried batter in syrup', vegetarian: true, spicy: false, image: 'https://picsum.photos/200/150?random=9' },
   ],
 };
 
@@ -68,6 +69,10 @@ export default function Home() {
                       <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
+                      <Avatar className="mb-4">
+                        <AvatarImage src={item.image} alt={item.name} />
+                        <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
                       <p className="text-sm text-muted-foreground">{item.description}</p>
                       <p className="text-sm font-medium">Rs. {item.price}</p>
                       <div className="flex items-center mt-2">
