@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -66,7 +65,7 @@ export default function Home() {
                 {items.map(item => (
                   <Card key={item.name} className="shadow-md">
                     <CardHeader>
-                      <CardTitle className="text-lg">{item.name}</CardTitle>
+                      <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{item.description}</p>
