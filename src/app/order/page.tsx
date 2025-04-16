@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function OrderPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
   const [totalAmount, setTotalAmount] = useState<number | null>(null);
-  const [orderedItems, setOrderedItems] = useState<{[key: string]: number} | null>(null);
+  const [orderedItems, setOrderedItems] = useState<{[key: string]: {price: number, quantity: number}} | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function OrderPage() {
     }
   }, []);
 
-  const handlePayNow = () => {
+  const handlePayNow = async () => {
     // Simulate a successful payment
     alert('Payment Successful!');
 
@@ -56,10 +56,11 @@ export default function OrderPage() {
               <div className="mb-4">
                 <p className="text-lg font-medium">Ordered Items:</p>
                 <ul>
-                  {Object.entries(orderedItems).map(([name, price]) => (
+                  {Object.entries(orderedItems).map(([name, item]) => (
                     <li key={name} className="flex justify-between py-2 border-b">
                       <span>{name}</span>
-                      <span>Rs. {price.toFixed(2)}</span>
+                      <span>Quantity: {item.quantity}</span>
+                      <span>Rs. {(item.price * item.quantity).toFixed(2)}</span>
                     </li>
                   ))}
                 </ul>
@@ -79,4 +80,3 @@ export default function OrderPage() {
     </div>
   );
 }
-
