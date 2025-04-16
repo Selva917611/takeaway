@@ -22,7 +22,8 @@ export default {
   			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				foreground: 'hsl(var(--primary-foreground))',
+          lightBlue: '#ADD8E6', // Light blue color
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',

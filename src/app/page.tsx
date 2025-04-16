@@ -117,7 +117,7 @@ export default function Home() {
               Take Away (+Rs. 5)
             </label>
           </div>
-          <Button variant="primary" onClick={handlePlaceOrder}>Place Order</Button>
+          <Button variant="lightBlue" onClick={handlePlaceOrder}>Place Order</Button>
         </CardContent>
       </Card>
     </div>
