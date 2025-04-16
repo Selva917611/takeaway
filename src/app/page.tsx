@@ -83,8 +83,8 @@ export default function Home() {
             <Tabs defaultValue="all" className="mt-4">
               <TabsList>
                 <TabsTrigger value="all" onClick={() => setActiveTab("all")}>All</TabsTrigger>
-                <TabsTrigger value="veg" onClick={() => setActiveTab("veg")} className="hover:bg-lightgreen-500">Veg</TabsTrigger>
-                <TabsTrigger value="nonveg" onClick={() => setActiveTab("nonveg")} className="hover:bg-lightred-500">Non-Veg</TabsTrigger>
+                <TabsTrigger value="veg" onClick={() => setActiveTab("veg")} className="hover:bg-red-200">Veg</TabsTrigger>
+                <TabsTrigger value="nonveg" onClick={() => setActiveTab("nonveg")} className="hover:bg-red-200">Non-Veg</TabsTrigger>
               </TabsList>
             </Tabs>
           </CardHeader>
@@ -246,3 +246,4 @@ export default function Home() {
     </>
   );
 }
+
