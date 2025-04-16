@@ -6,7 +6,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 // Define menu items with descriptions and dietary info
 const menu = {
@@ -119,9 +118,6 @@ export default function Home() {
             </label>
           </div>
           <Button variant="primary" onClick={handlePlaceOrder}>Place Order</Button>
-          <Link href="/order">
-              <Button>Go to Order</Button>
-          </Link>
         </CardContent>
       </Card>
     </div>
