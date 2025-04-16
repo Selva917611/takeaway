@@ -69,10 +69,7 @@ export default function Home() {
                       <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <Avatar className="mb-4">
-                        <AvatarImage src={item.image} alt={item.name} />
-                        <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
+                      
                       <p className="text-sm text-muted-foreground">{item.description}</p>
                       <p className="text-sm font-medium">Rs. {item.price}</p>
                       <div className="flex items-center mt-2">
