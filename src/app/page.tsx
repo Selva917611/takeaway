@@ -24,6 +24,11 @@ const menu = {
     { name: 'Masala Dosa', price: 65, description: 'Dosa stuffed with spiced potatoes', vegetarian: true, spicy: true, image: '/masaladosa.jpg' },
     { name: 'Mysore Masala Dosa', price: 70, description: 'Spicy dosa from Mysore', vegetarian: true, spicy: true, image: '/mysoremasaladosa.jpg', special: true },
     { name: 'Plain Dosa', price: 25, description: 'Simple and tasty Dosa', vegetarian: true, spicy: false, image: '/plaindosa.jpg' },
+    { name: 'Onion Rava Dosa', price: 75, description: 'Rava dosa with onion toppings', vegetarian: true, spicy: false, image: '/onionravadosa.jpg' },
+    { name: 'Ghee Roast Dosa', price: 80, description: 'Dosa roasted with ghee', vegetarian: true, spicy: false, image: '/ghee roast dosa.jpg' },
+    { name: 'Paper Dosa', price: 85, description: 'Thin and crispy dosa', vegetarian: true, spicy: false, image: '/paper dosa.jpg' },
+    { name: 'Pesarattu', price: 90, description: 'Moong dal crepe', vegetarian: true, spicy: false, image: '/pesarattu.jpg' },
+    { name: 'Neer Dosa', price: 95, description: 'Soft and spongy dosa', vegetarian: true, spicy: false, image: '/neer dosa.jpg' },
   ],
   'North Indian': [
     { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: '/butterchicken.jpg', special: true },
@@ -31,11 +36,16 @@ const menu = {
     { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false, image: '/dalmakhani.jpg' },
     { name: 'Chole Bhature', price: 110, description: 'Chickpea curry served with fried bread', vegetarian: true, spicy: true, image: '/cholebhature.jpg' },
     { name: 'Aloo Gobi', price: 90, description: 'Potato and cauliflower curry', vegetarian: true, spicy: false, image: '/aloogobi.jpg' },
-     { name: 'Navratan Korma', price: 130, description: 'Vegetable curry with nuts and fruits', vegetarian: true, spicy: false, image: '/navratankorma.jpg' },
+    { name: 'Navratan Korma', price: 130, description: 'Vegetable curry with nuts and fruits', vegetarian: true, spicy: false, image: '/navratankorma.jpg' },
     { name: 'Malai Kofta', price: 140, description: 'Cottage cheese balls in creamy gravy', vegetarian: true, spicy: false, image: '/malaikofta.jpg' },
     { name: 'Chicken Tikka Masala', price: 160, description: 'Marinated chicken in a spiced sauce', vegetarian: false, spicy: true, image: '/chickentikkamasala.jpg' },
     { name: 'Shahi Paneer', price: 130, description: 'Cottage cheese in a rich gravy', vegetarian: true, spicy: false, image: '/shahipaneer.jpg' },
     { name: 'Baingan Bharta', price: 95, description: 'Mashed eggplant dish', vegetarian: true, spicy: true, image: '/bainganbharta.jpg' },
+     { name: 'Kadai Paneer', price: 125, description: 'Cottage cheese cooked in a wok', vegetarian: true, spicy: true, image: '/kadaipaneer.jpg' },
+    { name: 'Veg Biryani', price: 115, description: 'Mixed vegetable and rice dish', vegetarian: true, spicy: false, image: '/veg biryani.jpg' },
+    { name: 'Rajma Chawal', price: 105, description: 'Kidney bean curry with rice', vegetarian: true, spicy: false, image: '/rajmachawal.jpg' },
+    { name: 'Methi Chaman', price: 135, description: 'Fenugreek and cottage cheese dish', vegetarian: true, spicy: true, image: '/methichaman.jpg' },
+    { name: 'Dal Tadka', price: 95, description: 'Tempered lentil dish', vegetarian: true, spicy: false, image: '/daltadka.jpg' },
   ],
   'Desserts': [
     { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: '/gulabjamun.jpg' },
@@ -48,6 +58,11 @@ const menu = {
     { name: 'Moong Dal Halwa', price: 65, description: 'Lentil-based sweet dessert', vegetarian: true, spicy: false, image: '/moongdalhalwa.jpg' },
     { name: 'Kheer', price: 55, description: 'Rice pudding', vegetarian: true, spicy: false, image: '/kheer.jpg' },
     { name: 'Faluda', price: 70, description: 'Iced dessert with vermicelli', vegetarian: true, spicy: false, image: '/faluda.jpg' },
+    { name: 'Rasgulla', price: 40, description: 'Spongy cheese balls in syrup', vegetarian: true, spicy: false, image: '/rasgulla.jpg' },
+    { name: 'Double ka Meetha', price: 60, description: 'Bread pudding with dry fruits', vegetarian: true, spicy: false, image: '/doublekameetha.jpg' },
+    { name: 'Shrikhand', price: 55, description: 'Strained yogurt dessert', vegetarian: true, spicy: false, image: '/shrikhand.jpg' },
+    { name: 'Cham Cham', price: 50, description: 'Bengali sweet', vegetarian: true, spicy: false, image: '/chamcham.jpg' },
+    { name: 'Payasam', price: 65, description: 'South Indian pudding', vegetarian: true, spicy: false, image: '/payasam.jpg' },
   ],
   'Ice Creams': [
     { name: 'Vanilla Ice Cream', price: 60, description: 'Classic vanilla ice cream', vegetarian: true, spicy: false, image: '/vanillaicecream.jpg' },
@@ -60,6 +75,11 @@ const menu = {
     { name: 'Rocky Road Ice Cream', price: 75, description: 'Chocolate ice cream with nuts and marshmallows', vegetarian: true, spicy: false, image: '/rockyroadicecream.jpg' },
     { name: 'Mint Chocolate Chip Ice Cream', price: 65, description: 'Mint flavored ice cream with chocolate chips', vegetarian: true, spicy: false, image: '/mintchocolatechipicecream.jpg' },
     { name: 'Cookies and Cream Ice Cream', price: 70, description: 'Vanilla ice cream with crushed cookies', vegetarian: true, spicy: false, image: '/cookiesandcreamicecream.jpg' },
+    { name: 'Black Raspberry Ice Cream', price: 75, description: 'Sweet black raspberry ice cream', vegetarian: true, spicy: false, image: '/blackraspberryicecream.jpg' },
+    { name: 'Blueberry Cheesecake Ice Cream', price: 80, description: 'Blueberry and cheesecake flavored ice cream', vegetarian: true, spicy: false, image: '/blueberrycheesecakeicecream.jpg' },
+    { name: 'Chocolate Chip Cookie Dough Ice Cream', price: 85, description: 'Vanilla ice cream with cookie dough chunks', vegetarian: true, spicy: false, image: '/chocolatechipcookiedoughicecream.jpg' },
+    { name: 'Coconut Ice Cream', price: 70, description: 'Rich and tropical coconut ice cream', vegetarian: true, spicy: false, image: '/coconuticecream.jpg' },
+    { name: 'Moose Tracks Ice Cream', price: 75, description: 'Vanilla ice cream with peanut butter cups and fudge', vegetarian: true, spicy: false, image: '/moosetracksicecream.jpg' },
   ],
   'Fresh Juices': [
     { name: 'Orange Juice', price: 40, description: 'Freshly squeezed orange juice', vegetarian: true, spicy: false, image: '/orangejuice.jpg' },
@@ -72,6 +92,11 @@ const menu = {
     { name: 'Cranberry Juice', price: 45, description: 'Freshly squeezed cranberry juice', vegetarian: true, spicy: false, image: '/cranberryjuice.jpg' },
      { name: 'Pomegranate Juice', price: 50, description: 'Freshly squeezed pomegranate juice', vegetarian: true, spicy: false, image: '/pomegranatejuice.jpg' },
     { name: 'Sugarcane Juice', price: 35, description: 'Freshly squeezed sugarcane juice', vegetarian: true, spicy: false, image: '/sugarcanejuice.jpg' },
+    { name: 'Beetroot Juice', price: 40, description: 'Freshly squeezed beetroot juice', vegetarian: true, spicy: false, image: '/beetrootjuice.jpg' },
+    { name: 'Carrot Juice', price: 40, description: 'Freshly squeezed carrot juice', vegetarian: true, spicy: false, image: '/carrotjuice.jpg' },
+    { name: 'Mosambi Juice', price: 45, description: 'Freshly squeezed mosambi juice', vegetarian: true, spicy: false, image: '/mosambijuice.jpg' },
+    { name: 'Amla Juice', price: 45, description: 'Freshly squeezed amla juice', vegetarian: true, spicy: false, image: '/amlajuice.jpg' },
+    { name: 'Ginger Juice', price: 35, description: 'Freshly squeezed ginger juice', vegetarian: true, spicy: false, image: '/gingerjuice.jpg' },
   ],
 };
 
@@ -113,9 +138,6 @@ export default function Home() {
         total += selectedItems[itemName].price * selectedItems[itemName].quantity;
       }
     }
-    if (takeAway) {
-      total += 5;
-    }
     return total;
   };
 
@@ -125,6 +147,7 @@ export default function Home() {
     // Store the total and selected items in localStorage
     localStorage.setItem('billAmount', total.toString());
     localStorage.setItem('orderedItems', JSON.stringify(selectedItems));
+    localStorage.setItem('takeAway', takeAway.toString());
 
     // Navigate to the order page
     router.push('/order');
@@ -481,7 +504,11 @@ export default function Home() {
               <p className="text-lg font-semibold">Rs. {total}</p>
             </div>
             <div className="flex items-center">
-              <Checkbox id="take-away" checked={takeAway} onCheckedChange={setTakeAway} />
+              <Checkbox id="take-away" checked={takeAway} onCheckedChange={(checked) => {
+                  setTakeAway(checked);
+                   localStorage.setItem('takeAway', checked.toString()); // Store takeAway in localStorage
+
+              }} />
               <label htmlFor="take-away" className="ml-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 Take Away (+Rs. 5)
               </label>

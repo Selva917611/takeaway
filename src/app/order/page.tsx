@@ -10,26 +10,42 @@ export default function OrderPage() {
   const [totalAmount, setTotalAmount] = useState<number | null>(null);
   const [orderedItems, setOrderedItems] = useState<{[key: string]: {price: number, quantity: number}} | null>(null);
   const router = useRouter();
+  const [takeAway, setTakeAway] = useState(false);
+  const takeAwayCharge = 5;
 
   useEffect(() => {
-    // Retrieve the bill amount from localStorage
+    // Retrieve the bill amount and ordered items from localStorage
     const amount = localStorage.getItem('billAmount');
     const items = localStorage.getItem('orderedItems');
+    const takeAwayValue = localStorage.getItem('takeAway');
+
+    if (takeAwayValue) {
+        setTakeAway(takeAwayValue === 'true');
+    }
 
     if (amount) {
       const parsedAmount = parseFloat(amount);
       setBillAmount(parsedAmount);
-
-      // Calculate tax (2%) and total amount
-      const tax = parsedAmount * 0.02;
-      const total = parsedAmount + tax;
-      setTotalAmount(total);
     }
 
     if (items) {
       setOrderedItems(JSON.parse(items));
     }
   }, []);
+
+  useEffect(() => {
+      // Calculate total amount whenever billAmount or takeAway changes
+      if (billAmount !== null) {
+          let total = billAmount;
+          const tax = billAmount * 0.02;
+          total += tax;
+          if (takeAway) {
+              total += takeAwayCharge;
+          }
+          setTotalAmount(total);
+      }
+  }, [billAmount, takeAway]);
+
 
   const handlePayNow = async () => {
     // Simulate a successful payment
@@ -38,6 +54,7 @@ export default function OrderPage() {
     // Clear the bill amount from localStorage
     localStorage.removeItem('billAmount');
     localStorage.removeItem('orderedItems');
+    localStorage.removeItem('takeAway');
 
 
     // Redirect to the home page
@@ -65,9 +82,27 @@ export default function OrderPage() {
                   ))}
                 </ul>
               </div>
-              <p className="text-lg">Bill Amount: Rs. {billAmount.toFixed(2)}</p>
-              <p className="text-sm text-muted-foreground">Tax (2%): Rs. {(billAmount * 0.02).toFixed(2)}</p>
-              <p className="text-lg font-semibold">Total Amount (incl. tax): Rs. {totalAmount ? totalAmount.toFixed(2) : '0.00'}</p>
+              <div className="mb-4">
+                <p className="text-lg font-medium">Bill Details:</p>
+                <div className="flex justify-between py-2">
+                    <span>Subtotal:</span>
+                    <span>Rs. {billAmount.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                    <span>Tax (2%):</span>
+                    <span>Rs. {(billAmount * 0.02).toFixed(2)}</span>
+                </div>
+                 {takeAway && (
+                    <div className="flex justify-between py-2">
+                        <span>Take Away Charge:</span>
+                        <span>Rs. {takeAwayCharge.toFixed(2)}</span>
+                    </div>
+                )}
+                <div className="flex justify-between py-2 font-semibold">
+                    <span>Total:</span>
+                    <span>Rs. {totalAmount ? totalAmount.toFixed(2) : '0.00'}</span>
+                </div>
+              </div>
               <Button onClick={handlePayNow} className="mt-4 bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600">
                 Pay Now
               </Button>
