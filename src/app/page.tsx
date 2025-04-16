@@ -9,11 +9,12 @@ import { useRouter } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input"
 
 // Define menu items with descriptions and dietary info
 const menu = {
   'South Indian': [
-    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false, image: '/dosa.jpg' },
+    { name: 'Dosa', price: 30, description: 'Crispy rice and lentil crepe', vegetarian: true, spicy: false, image: 'https://www.cookwithmanali.com/wp-content/uploads/2020/07/Masala-Dosa-Recipe-500x500.jpg' },
     { name: 'Idli', price: 25, description: 'Steamed rice cakes', vegetarian: true, spicy: false, image: '/idli.jpg' },
     { name: 'Vada', price: 35, description: 'Savory fried lentil donuts', vegetarian: true, spicy: true, image: '/vada.jpg' },
     { name: 'Pongal', price: 45, description: 'Rice and lentil dish', vegetarian: true, spicy: false, image: '/pongal.jpg' },
@@ -75,24 +76,43 @@ const menu = {
 };
 
 export default function Home() {
-  const [selectedItems, setSelectedItems] = useState<{ [key: string]: number }>({});
+  const [selectedItems, setSelectedItems] = useState<{ [key: string]: { price: number; quantity: number } }>({});
   const [takeAway, setTakeAway] = useState(false);
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("all");
 
-  const toggleItem = (itemName: string, price: number) => {
+  const setItemQuantity = (itemName: string, quantity: number, price: number) => {
     setSelectedItems(prev => {
-      if (prev[itemName]) {
+      if (quantity <= 0) {
         const { [itemName]: removed, ...rest } = prev;
         return rest;
       } else {
-        return { ...prev, [itemName]: price };
+        return { ...prev, [itemName]: { price: price, quantity: quantity } };
       }
     });
   };
 
+
+  const toggleItem = (itemName: string, price: number) => {
+      setSelectedItems(prev => {
+          if (prev[itemName]) {
+              // Item is already selected, remove it
+              const { [itemName]: removed, ...rest } = prev;
+              return rest;
+          } else {
+              // Item is not selected, add it with a default quantity of 1
+              return { ...prev, [itemName]: { price: price, quantity: 1 } };
+          }
+      });
+  };
+
   const calculateTotal = () => {
-    let total = Object.values(selectedItems).reduce((acc, price) => acc + price, 0);
+    let total = 0;
+    for (const itemName in selectedItems) {
+      if (selectedItems.hasOwnProperty(itemName)) {
+        total += selectedItems[itemName].price * selectedItems[itemName].quantity;
+      }
+    }
     if (takeAway) {
       total += 5;
     }
@@ -160,7 +180,7 @@ export default function Home() {
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
-                           <AvatarImage src={item.name === 'Dosa' ? 'https://www.cookwithmanali.com/wp-content/uploads/2020/07/Masala-Dosa-Recipe-500x500.jpg' : (item.image || "https://picsum.photos/200/150?random=1")} alt={item.name} />
+                           <AvatarImage src={item.image || "https://picsum.photos/200/150?random=1"} alt={item.name} />
                            <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -178,6 +198,22 @@ export default function Home() {
                             Select
                           </label>
                         </div>
+                         {selectedItems[item.name] && (
+                            <div className="flex items-center mt-2">
+                                <label htmlFor={`${item.name}-quantity`} className="mr-2 text-sm font-medium">Quantity:</label>
+                                <Input
+                                    type="number"
+                                    id={`${item.name}-quantity`}
+                                    min="1"
+                                    defaultValue="1"
+                                    className="w-20 text-sm"
+                                    onChange={(e) => {
+                                        const quantity = parseInt(e.target.value);
+                                        setItemQuantity(item.name, quantity, item.price);
+                                    }}
+                                />
+                            </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -225,6 +261,22 @@ export default function Home() {
                             Select
                           </label>
                         </div>
+                         {selectedItems[item.name] && (
+                            <div className="flex items-center mt-2">
+                                <label htmlFor={`${item.name}-quantity`} className="mr-2 text-sm font-medium">Quantity:</label>
+                                <Input
+                                    type="number"
+                                    id={`${item.name}-quantity`}
+                                    min="1"
+                                    defaultValue="1"
+                                    className="w-20 text-sm"
+                                    onChange={(e) => {
+                                        const quantity = parseInt(e.target.value);
+                                        setItemQuantity(item.name, quantity, item.price);
+                                    }}
+                                />
+                            </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -271,6 +323,22 @@ export default function Home() {
                             Select
                           </label>
                         </div>
+                         {selectedItems[item.name] && (
+                            <div className="flex items-center mt-2">
+                                <label htmlFor={`${item.name}-quantity`} className="mr-2 text-sm font-medium">Quantity:</label>
+                                <Input
+                                    type="number"
+                                    id={`${item.name}-quantity`}
+                                    min="1"
+                                    defaultValue="1"
+                                    className="w-20 text-sm"
+                                    onChange={(e) => {
+                                        const quantity = parseInt(e.target.value);
+                                        setItemQuantity(item.name, quantity, item.price);
+                                    }}
+                                />
+                            </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -316,6 +384,22 @@ export default function Home() {
                             Select
                           </label>
                         </div>
+                         {selectedItems[item.name] && (
+                            <div className="flex items-center mt-2">
+                                <label htmlFor={`${item.name}-quantity`} className="mr-2 text-sm font-medium">Quantity:</label>
+                                <Input
+                                    type="number"
+                                    id={`${item.name}-quantity`}
+                                    min="1"
+                                    defaultValue="1"
+                                    className="w-20 text-sm"
+                                    onChange={(e) => {
+                                        const quantity = parseInt(e.target.value);
+                                        setItemQuantity(item.name, quantity, item.price);
+                                    }}
+                                />
+                            </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -362,6 +446,22 @@ export default function Home() {
                             Select
                           </label>
                         </div>
+                         {selectedItems[item.name] && (
+                            <div className="flex items-center mt-2">
+                                <label htmlFor={`${item.name}-quantity`} className="mr-2 text-sm font-medium">Quantity:</label>
+                                <Input
+                                    type="number"
+                                    id={`${item.name}-quantity`}
+                                    min="1"
+                                    defaultValue="1"
+                                    className="w-20 text-sm"
+                                    onChange={(e) => {
+                                        const quantity = parseInt(e.target.value);
+                                        setItemQuantity(item.name, quantity, item.price);
+                                    }}
+                                />
+                            </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -393,5 +493,3 @@ export default function Home() {
     </>
   );
 }
-
-
