@@ -8,11 +8,14 @@ import { useRouter } from 'next/navigation';
 export default function OrderPage() {
   const [billAmount, setBillAmount] = useState<number | null>(null);
   const [totalAmount, setTotalAmount] = useState<number | null>(null);
+  const [orderedItems, setOrderedItems] = useState<{[key: string]: number} | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     // Retrieve the bill amount from localStorage
     const amount = localStorage.getItem('billAmount');
+    const items = localStorage.getItem('orderedItems');
+
     if (amount) {
       const parsedAmount = parseFloat(amount);
       setBillAmount(parsedAmount);
@@ -22,6 +25,10 @@ export default function OrderPage() {
       const total = parsedAmount + tax;
       setTotalAmount(total);
     }
+
+    if (items) {
+      setOrderedItems(JSON.parse(items));
+    }
   }, []);
 
   const handlePayNow = () => {
@@ -30,6 +37,8 @@ export default function OrderPage() {
 
     // Clear the bill amount from localStorage
     localStorage.removeItem('billAmount');
+    localStorage.removeItem('orderedItems');
+
 
     // Redirect to the home page
     router.push('/');
@@ -42,8 +51,19 @@ export default function OrderPage() {
           <CardTitle>Your Order</CardTitle>
         </CardHeader>
         <CardContent>
-          {billAmount !== null ? (
+          {billAmount !== null && orderedItems !== null ? (
             <>
+              <div className="mb-4">
+                <p className="text-lg font-medium">Ordered Items:</p>
+                <ul>
+                  {Object.entries(orderedItems).map(([name, price]) => (
+                    <li key={name} className="flex justify-between py-2 border-b">
+                      <span>{name}</span>
+                      <span>Rs. {price.toFixed(2)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <p className="text-lg">Bill Amount: Rs. {billAmount.toFixed(2)}</p>
               <p className="text-sm text-muted-foreground">Tax (2%): Rs. {(billAmount * 0.02).toFixed(2)}</p>
               <p className="text-lg font-semibold">Total Amount (incl. tax): Rs. {totalAmount ? totalAmount.toFixed(2) : '0.00'}</p>
@@ -59,3 +79,4 @@ export default function OrderPage() {
     </div>
   );
 }
+
