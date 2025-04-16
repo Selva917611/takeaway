@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge";
 
 // Define menu items with descriptions and dietary info
 const menu = {
@@ -24,7 +25,7 @@ const menu = {
     { name: 'Plain Dosa', price: 25, description: 'Simple and tasty Dosa', vegetarian: true, spicy: false, image: '/plaindosa.jpg' },
   ],
   'North Indian': [
-    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: '/butterchicken.jpg' },
+    { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: '/butterchicken.jpg', special: true },
     { name: 'Palak Paneer', price: 120, description: 'Spinach and cottage cheese curry', vegetarian: true, spicy: true, image: '/palakpaneer.jpg' },
     { name: 'Dal Makhani', price: 100, description: 'Black lentil curry', vegetarian: true, spicy: false, image: '/dalmakhani.jpg' },
     { name: 'Chole Bhature', price: 110, description: 'Chickpea curry served with fried bread', vegetarian: true, spicy: true, image: '/cholebhature.jpg' },
@@ -152,7 +153,9 @@ export default function Home() {
                   }).map(item => (
                     <Card key={item.name} className="shadow-md">
                       <CardHeader>
-                        <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
+                        <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
+                          {item.name}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
@@ -196,7 +199,10 @@ export default function Home() {
                   }).map(item => (
                     <Card key={item.name} className="shadow-md">
                       <CardHeader>
-                        <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
+                        <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
+                          {item.name}
+                           {item.special && <Badge variant="secondary">Special</Badge>}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                          <Avatar className="mb-4 h-24 w-24">
@@ -240,7 +246,9 @@ export default function Home() {
                   }).map(item => (
                     <Card key={item.name} className="shadow-md">
                       <CardHeader>
-                        <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
+                        <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
+                          {item.name}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
@@ -283,7 +291,9 @@ export default function Home() {
                   }).map(item => (
                     <Card key={item.name} className="shadow-md">
                       <CardHeader>
-                        <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
+                        <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
+                          {item.name}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
@@ -327,7 +337,9 @@ export default function Home() {
                   }).map(item => (
                     <Card key={item.name} className="shadow-md">
                       <CardHeader>
-                        <CardTitle className="text-lg hover:text-red-500">{item.name}</CardTitle>
+                        <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
+                          {item.name}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
@@ -380,5 +392,3 @@ export default function Home() {
     </>
   );
 }
-
-
