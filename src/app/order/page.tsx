@@ -25,8 +25,14 @@ export default function OrderPage() {
   }, []);
 
   const handlePayNow = () => {
-    // Redirect to a placeholder payment gateway
-    router.push('/payment');
+    // Simulate a successful payment
+    alert('Payment Successful!');
+
+    // Clear the bill amount from localStorage
+    localStorage.removeItem('billAmount');
+
+    // Redirect to the home page
+    router.push('/');
   };
 
   return (
