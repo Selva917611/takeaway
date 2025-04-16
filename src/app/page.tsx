@@ -30,6 +30,8 @@ const menu = {
     { name: 'Semiya Upma', price: 45, description: 'Upma made from semolina vermicelli', vegetarian: true, spicy: false, image: '/semiyaupma.jpg' },
     { name: 'Bisi Bele Bath', price: 70, description: 'Rice dish with lentils and vegetables', vegetarian: true, spicy: true, image: '/bisibelebath.jpg' },
     { name: 'Vangi Bath', price: 65, description: 'Rice dish with eggplant', vegetarian: true, spicy: false, image: '/vangibath.jpg' },
+    { name: 'Set Dosa', price: 50, description: 'Set of two dosas served together', vegetarian: true, spicy: false, image: '/setdosa.jpg' },
+    { name: 'Pesarattu', price: 75, description: 'Moong dal dosa', vegetarian: true, spicy: false, image: '/pesarattu.jpg' },
   ],
   'North Indian': [
     { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: '/butterchicken.jpg' },
@@ -51,6 +53,7 @@ const menu = {
     { name: 'Mattar Paneer', price: 125, description: 'Peas and cottage cheese curry', vegetarian: true, spicy: true, image: '/mattarpaneer.jpg' },
     { name: 'Chicken Biryani', price: 175, description: 'Flavorful rice dish with chicken', vegetarian: false, spicy: true, image: '/chickenbiryani.jpg' },
     { name: 'Veg Biryani', price: 135, description: 'Flavorful rice dish with vegetables', vegetarian: true, spicy: false, image: '/vegbiryani.jpg' },
+    { name: 'Dal Tadka', price: 90, description: 'Lentils tempered with spices', vegetarian: true, spicy: true, image: '/daltadka.jpg' },
   ],
   'Desserts': [
     { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: '/gulabjamun.jpg' },
@@ -71,6 +74,8 @@ const menu = {
     { name: 'Sandesh', price: 55, description: 'Bengali sweet made from cheese', vegetarian: true, spicy: false, image: '/sandesh.jpg' },
     { name: 'Rasgulla', price: 45, description: 'Spongy cheese balls in syrup', vegetarian: true, spicy: false, image: '/rasgulla.jpg' },
     { name: 'Cham Cham', price: 60, description: 'Sweet made of paneer, dipped in sugar syrup', vegetarian: true, spicy: false, image: '/chamcham.jpg' },
+     { name: 'Peda', price: 40, description: 'Sweet made from khoa, sugar and cardamom', vegetarian: true, spicy: false, image: '/peda.jpg' },
+    { name: 'Halwa', price: 55, description: 'A generic term for various dense confections', vegetarian: true, spicy: false, image: '/halwa.jpg' },
   ],
   'Ice Creams': [
     { name: 'Vanilla Ice Cream', price: 60, description: 'Classic vanilla ice cream', vegetarian: true, spicy: false, image: '/vanillaicecream.jpg' },
@@ -84,6 +89,15 @@ const menu = {
     { name: 'Mint Chocolate Chip Ice Cream', price: 65, description: 'Mint flavored ice cream with chocolate chips', vegetarian: true, spicy: false, image: '/mintchocolatechipicecream.jpg' },
     { name: 'Cookies and Cream Ice Cream', price: 70, description: 'Vanilla ice cream with crushed cookies', vegetarian: true, spicy: false, image: '/cookiesandcreamicecream.jpg' },
     { name: 'Neapolitan Ice Cream', price: 80, description: 'Vanilla, chocolate, and strawberry ice cream', vegetarian: true, spicy: false, image: '/neapolitanicecream.jpg' },
+    { name: 'Dulce de Leche Ice Cream', price: 75, description: 'Caramel flavored ice cream', vegetarian: true, spicy: false, image: '/dulcedelecheicecream.jpg' },
+    { name: 'Black Raspberry Ice Cream', price: 70, description: 'Ice cream with black raspberry flavor', vegetarian: true, spicy: false, image: '/blackraspberryicecream.jpg' },
+    { name: 'Blueberry Pie Ice Cream', price: 80, description: 'Ice cream with blueberry pie chunks', vegetarian: true, spicy: false, image: '/blueberrypieicecream.jpg' },
+    { name: 'Peanut Butter Cup Ice Cream', price: 75, description: 'Ice cream with peanut butter cups', vegetarian: true, spicy: false, image: '/peanutbuttercupicecream.jpg' },
+    { name: 'French Vanilla Ice Cream', price: 70, description: 'Vanilla ice cream with richer taste', vegetarian: true, spicy: false, image: '/frenchvanillaicecream.jpg' },
+    { name: 'Rainbow Sherbet Ice Cream', price: 65, description: 'Variety of fruit flavored ice cream', vegetarian: true, spicy: false, image: '/rainbowsherbet.jpg' },
+    { name: 'Chocolate Chip Cookie Dough Ice Cream', price: 75, description: 'Vanilla ice cream with cookie dough chunks', vegetarian: true, spicy: false, image: '/chocolatechipcookiedoughicecream.jpg' },
+    { name: 'Caramel Swirl Ice Cream', price: 70, description: 'Ice cream with a caramel swirl', vegetarian: true, spicy: false, image: '/caramelswirlicecream.jpg' },
+    { name: 'Smores Ice Cream', price: 80, description: 'Ice cream with marshmallow and graham crackers', vegetarian: true, spicy: false, image: '/smoresicecream.jpg' },
   ],
   'Fresh Juices': [
     { name: 'Orange Juice', price: 40, description: 'Freshly squeezed orange juice', vegetarian: true, spicy: false, image: '/orangejuice.jpg' },
@@ -96,6 +110,16 @@ const menu = {
     { name: 'Cranberry Juice', price: 45, description: 'Freshly squeezed cranberry juice', vegetarian: true, spicy: false, image: '/cranberryjuice.jpg' },
      { name: 'Pomegranate Juice', price: 50, description: 'Freshly squeezed pomegranate juice', vegetarian: true, spicy: false, image: '/pomegranatejuice.jpg' },
     { name: 'Sugarcane Juice', price: 35, description: 'Freshly squeezed sugarcane juice', vegetarian: true, spicy: false, image: '/sugarcanejuice.jpg' },
+    { name: 'Guava Juice', price: 40, description: 'Freshly squeezed guava juice', vegetarian: true, spicy: false, image: '/guavajuice.jpg' },
+    { name: 'Beet Juice', price: 45, description: 'Freshly squeezed beet juice', vegetarian: true, spicy: false, image: '/beetjuice.jpg' },
+    { name: 'Carrot Juice', price: 35, description: 'Freshly squeezed carrot juice', vegetarian: true, spicy: false, image: '/carrotjuice.jpg' },
+    { name: 'Kiwi Juice', price: 50, description: 'Freshly squeezed kiwi juice', vegetarian: true, spicy: false, image: '/kiwijuice.jpg' },
+    { name: 'Papaya Juice', price: 40, description: 'Freshly squeezed papaya juice', vegetarian: true, spicy: false, image: '/papayajuice.jpg' },
+    { name: 'Muskmelon Juice', price: 45, description: 'Freshly squeezed muskmelon juice', vegetarian: true, spicy: false, image: '/muskmelonjuice.jpg' },
+    { name: 'Lime Juice', price: 30, description: 'Freshly squeezed lime juice', vegetarian: true, spicy: false, image: '/limejuice.jpg' },
+    { name: 'Strawberry Juice', price: 40, description: 'Freshly squeezed strawberry juice', vegetarian: true, spicy: false, image: '/strawberryjuice.jpg' },
+     { name: 'Mixed Fruit Juice', price: 55, description: 'A combination of various fresh juices', vegetarian: true, spicy: false, image: '/mixedfruitjuice.jpg' },
+    { name: 'Vegetable Juice', price: 50, description: 'A combination of various vegetable juices', vegetarian: true, spicy: false, image: '/vegetablejuice.jpg' },
   ],
 };
 
