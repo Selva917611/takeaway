@@ -21,7 +21,7 @@ const menu = {
     { name: 'Sambar Vada', price: 55, description: 'Vada dipped in sambar', vegetarian: true, spicy: true, image: '/sambarvada.jpg' },
     { name: 'Rava Dosa', price: 60, description: 'Crispy crepe made from semolina', vegetarian: true, spicy: false, image: '/ravadosa.jpg' },
     { name: 'Masala Dosa', price: 65, description: 'Dosa stuffed with spiced potatoes', vegetarian: true, spicy: true, image: '/masaladosa.jpg' },
-    { name: 'Mysore Masala Dosa', price: 70, description: 'Spicy dosa from Mysore', vegetarian: true, spicy: true, image: '/mysoremasaladosa.jpg' },
+    { name: 'Mysore Masala Dosa', price: 70, description: 'Spicy dosa from Mysore', vegetarian: true, spicy: true, image: '/mysoremasaladosa.jpg', special: true },
     { name: 'Plain Dosa', price: 25, description: 'Simple and tasty Dosa', vegetarian: true, spicy: false, image: '/plaindosa.jpg' },
   ],
   'North Indian': [
@@ -155,6 +155,7 @@ export default function Home() {
                       <CardHeader>
                         <CardTitle className="text-lg hover:text-red-500 flex items-center justify-between">
                           {item.name}
+                           {item.special && <Badge variant="secondary">Special</Badge>}
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
@@ -392,3 +393,4 @@ export default function Home() {
     </>
   );
 }
+
