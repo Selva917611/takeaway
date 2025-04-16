@@ -103,9 +103,11 @@ export default function OrderPage() {
                     <span>Rs. {totalAmount ? totalAmount.toFixed(2) : '0.00'}</span>
                 </div>
               </div>
-              <Button onClick={handlePayNow} className="mt-4 bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600">
-                Pay Now
-              </Button>
+              <div className="flex justify-center">
+                <Button onClick={handlePayNow} className="mt-4 bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600">
+                  Pay Now
+                </Button>
+              </div>
             </>
           ) : (
             <p>No order placed yet.</p>
