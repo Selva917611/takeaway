@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 // Define menu items with descriptions and dietary info
 const menu = {
@@ -29,6 +30,7 @@ const menu = {
 export default function Home() {
   const [selectedItems, setSelectedItems] = useState<{ [key: string]: number }>({});
   const [takeAway, setTakeAway] = useState(false);
+  const router = useRouter();
 
   const toggleItem = (itemName: string, price: number) => {
     setSelectedItems(prev => {
@@ -50,6 +52,13 @@ export default function Home() {
   };
 
   const total = calculateTotal();
+
+  const handlePlaceOrder = () => {
+    // Store the total in localStorage
+    localStorage.setItem('billAmount', total.toString());
+    // Navigate to the order page
+    router.push('/order');
+  };
 
   return (
     <div className="container mx-auto p-4 flex flex-col gap-4">
@@ -109,7 +118,10 @@ export default function Home() {
               Take Away (+Rs. 5)
             </label>
           </div>
-          <Button variant="primary">Place Order</Button>
+          <Button variant="primary" onClick={handlePlaceOrder}>Place Order</Button>
+          <Link href="/order">
+              <Button>Go to Order</Button>
+          </Link>
         </CardContent>
       </Card>
     </div>
