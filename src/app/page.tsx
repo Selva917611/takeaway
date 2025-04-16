@@ -83,14 +83,14 @@ export default function Home() {
             <Tabs defaultValue="all" className="mt-4">
               <TabsList>
                 <TabsTrigger value="all" onClick={() => setActiveTab("all")}>All</TabsTrigger>
-                <TabsTrigger value="veg" onClick={() => setActiveTab("veg")}>Veg</TabsTrigger>
-                <TabsTrigger value="nonveg" onClick={() => setActiveTab("nonveg")}>Non-Veg</TabsTrigger>
+                <TabsTrigger value="veg" onClick={() => setActiveTab("veg")} className="hover:bg-lightgreen-500">Veg</TabsTrigger>
+                <TabsTrigger value="nonveg" onClick={() => setActiveTab("nonveg")} className="hover:bg-lightred-500">Non-Veg</TabsTrigger>
               </TabsList>
             </Tabs>
           </CardHeader>
            
           <CardContent className="flex flex-col gap-4">
-            {Object.fromEntries(filteredMenu)['South Indian'] && (
+            {filteredMenu.find(([category]) => category === 'South Indian') && (
               <div key="South Indian" className="mb-4">
                 <h2 className="text-xl font-semibold mb-2">South Indian</h2>
                 <Separator className="mb-2" />
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
             )}
 
-            {Object.fromEntries(filteredMenu)['North Indian'] && (
+            {filteredMenu.find(([category]) => category === 'North Indian') && (
               <div key="North Indian" className="mb-4">
                 <h2 className="text-xl font-semibold mb-2">North Indian</h2>
                 <Separator className="mb-2" />
@@ -178,7 +178,7 @@ export default function Home() {
               </div>
             )}
 
-            {Object.fromEntries(filteredMenu).Desserts && (
+            {filteredMenu.find(([category]) => category === 'Desserts') && (
               <div key="Desserts" className="mb-4">
                 <h2 className="text-xl font-semibold mb-2">Desserts</h2>
                 <Separator className="mb-2" />
@@ -246,4 +246,3 @@ export default function Home() {
     </>
   );
 }
-
