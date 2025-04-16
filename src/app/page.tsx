@@ -160,7 +160,7 @@ export default function Home() {
                       </CardHeader>
                       <CardContent>
                         <Avatar className="mb-4 h-24 w-24">
-                           <AvatarImage src={item.image || "https://picsum.photos/200/150?random=1"} alt={item.name} />
+                           <AvatarImage src={item.name === 'Dosa' ? 'https://www.cookwithmanali.com/wp-content/uploads/2020/07/Masala-Dosa-Recipe-500x500.jpg' : (item.image || "https://picsum.photos/200/150?random=1")} alt={item.name} />
                            <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
