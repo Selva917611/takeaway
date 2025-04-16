@@ -24,7 +24,6 @@ const menu = {
     { name: 'Masala Dosa', price: 65, description: 'Dosa stuffed with spiced potatoes', vegetarian: true, spicy: true, image: '/masaladosa.jpg' },
     { name: 'Mysore Masala Dosa', price: 70, description: 'Spicy dosa from Mysore', vegetarian: true, spicy: true, image: '/mysoremasaladosa.jpg', special: true },
     { name: 'Plain Dosa', price: 25, description: 'Simple and tasty Dosa', vegetarian: true, spicy: false, image: '/plaindosa.jpg' },
-    
   ],
   'North Indian': [
     { name: 'Butter Chicken', price: 150, description: 'Creamy tomato-based chicken curry', vegetarian: false, spicy: false, image: '/butterchicken.jpg', special: true },
@@ -37,6 +36,9 @@ const menu = {
     { name: 'Chicken Tikka Masala', price: 160, description: 'Marinated chicken in a spiced sauce', vegetarian: false, spicy: true, image: '/chickentikkamasala.jpg' },
     { name: 'Shahi Paneer', price: 130, description: 'Cottage cheese in a rich gravy', vegetarian: true, spicy: false, image: '/shahipaneer.jpg' },
     { name: 'Baingan Bharta', price: 95, description: 'Mashed eggplant dish', vegetarian: true, spicy: true, image: '/bainganbharta.jpg' },
+        { name: 'Tandoori Chicken', price: 170, description: 'Marinated and roasted chicken', vegetarian: false, spicy: true, image: '/tandoorichicken.jpg' },
+        { name: 'Rogan Josh', price: 180, description: 'Aromatic lamb curry', vegetarian: false, spicy: true, image: '/roganjosh.jpg' },
+        { name: 'Fish Curry', price: 190, description: 'Spicy fish curry', vegetarian: false, spicy: true, image: '/fishcurry.jpg' },
   ],
   'Desserts': [
     { name: 'Gulab Jamun', price: 40, description: 'Deep-fried milk balls in syrup', vegetarian: true, spicy: false, image: '/gulabjamun.jpg' },
