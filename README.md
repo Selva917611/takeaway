@@ -1,1 +1,1 @@
-An application for restaurants to show the items 
+An application for restaurants to show the items in the 
