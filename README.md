@@ -1,1 +1,1 @@
-An application for 
+An application for restaurants 
