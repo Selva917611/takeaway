@@ -1,1 +1,1 @@
-An application for restaurants to show the items in the menu, give takeaway option
+An application for restaurants to show the items in the menu, give takeaway option and generate 
